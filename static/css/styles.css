@@ -1,8 +1,237 @@
-.navbar-brand img {
-  height: 50px;
-  margin-right: 10px
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;800&family=VT323&display=swap');
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
 }
 
-#hero {
-  background: yellow;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 30px;
+}
+
+/* ---------------- HEADER ---------------- */
+header {
+  padding: 5px 100px;
+  background: #000470;
+  margin: 0;
+  align-items: center;
+}
+
+header h1 {
+  color: white;
+  grid-column: span 6;
+  text-transform: uppercase;
+  font-size: 30px;
+  letter-spacing: 5px;
+  font-weight: bolder;
+}
+
+header nav {
+  grid-column: 7 / span 6;
+  justify-self: end;
+}
+
+header nav a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  margin-left: 15px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+header nav a:hover {
+  color: #68d388;
+}
+
+header nav a#contact {
+  background-color: #68d388;
+  color: black;
+  font-weight: 500;
+}
+
+header nav a#contact:hover {
+  color: black;
+}
+
+/* ---------------- MAIN ---------------- */
+main {
+  padding: 120px 100px;
+  background-color: #151988;
+  text-align: center;
+}
+
+main .content {
+  grid-column: span 12;
+  align-content: center;
+}
+
+main .content h1 {
+  font-size: 50px;
+  color: rgb(185, 90, 13);
+}
+
+main .content p {
+  font-size: 20px;
+  color: white;
+}
+
+main .content button {
+  padding: 15px;
+  margin-left: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+main .content button:hover {
+  transform: translateY(-5px);
+  color: black; /* replaced var(--text-dark) with safe value */
+}
+
+main .content button.demo {
+  background: #68d388;
+}
+
+main .content button.contact {
+  background: #68d388;
+}
+
+/* ---------------- SERVICES ---------------- */
+#services {
+  padding: 20px 100px;
+  background-color: rgb(243, 243, 243);
+  gap: 100px;
+  text-align: center;
+}
+
+#services h2 {
+  color: #000;
+}
+
+#services .card {
+  grid-column: span 3;
+}
+
+#services .card .icon {
+  background-color: rgb(197, 197, 197);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  line-height: 1;
+  color: white;
+  margin: 0 auto;
+}
+
+/* ---------------- PROJECTS ---------------- */
+#projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 50px 100px;
+  background-color: #fff;
+  align-items: center;
+}
+
+#projects img {
+  grid-column: 1 / span 6; /* fixed */
+  max-width: 300px;
+  justify-self: center;
+  align-self: center;
+}
+
+#projects .content {
+  grid-column: 7 / span 6; /* fixed */
+}
+
+/* ---------------- MISSION ---------------- */
+#mission {
+  padding: 30px 100px;
+  text-align: center;
+  border-top: 1px solid black; /* fixed */
+}
+
+#mission #top-head {
+  text-transform: uppercase;
+  padding: 10px;
+  display: inline-block; /* inline -> inline-block for styling */
+  color: #68d388;
+  background-color: #e0fae84f;
+  border-radius: 5px;
+}
+
+/* ---------------- TECH STACK ---------------- */
+#tech-stack {
+  padding: 5px 100px;
+  margin-left: 200px;
+  margin-right: 200px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
+}
+
+#tech-stack img {
+  max-width: 100px;
+}
+
+/* ---------------- FOOTER ---------------- */
+footer {
+  padding: 5px 100px;
+  margin-top: 30px;
+  background-color: #000470;
+  color: white;
+}
+
+footer.grid {
+  padding: 50px 100px;
+}
+
+footer .contact {
+  grid-column: 1 / span 4;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
+
+footer .contact img {
+  max-width: 100px;
+}
+
+footer .contact .footer-header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center; /* fixed */
+  text-align: left;
+  gap: 20px;
+}
+
+footer .contact button {
+  padding: 10px 15px;
+  background-color: #68d388;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+footer .products {
+  grid-column: 5 / span 4;
+}
+
+footer .company {
+  grid-column: 9 / span 4;
+}
+
+footer .rights {
+  grid-row: 2;
 }
