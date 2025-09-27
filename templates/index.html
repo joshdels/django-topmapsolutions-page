@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="{% static 'imgs/logo-footer.png' %}">
   <title>TopMap Solutions</title>
   <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
@@ -11,7 +12,10 @@
 </head>
 <body>
   <header class="grid">
-    <h1>TopMap Solutions</h1>
+    <div class="brand">
+      <img src="{% static 'imgs/logo-footer.png' %}" alt="img">
+      <h1>TopMap Solutions</h1>
+    </div>
     <nav>
       <a href="/">Book </a>
       <a href="/">Projects</a>
@@ -53,16 +57,24 @@
   </section>
 
   <section class="grid" id="projects">
-    <img src="{% static 'imgs/logo.jpg' %}" alt="project image">
+    <div class="map-preview">
+      <img src="{% static 'imgs/homify.PNG' %}" alt="Interactive Web GIS map preview">
+    </div>
     <div class="content">
-      <h1>Interactive and Collaborative Map</h1>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur tempore ex perspiciatis quis consectetur, quod illum dolore iusto illo dignissimos blanditiis nulla ab harum debitis commodi. Quam quo modi omnis!</p>
+      <h1>Web GIS Platform</h1>
+      <p>
+        Build and share powerful interactive maps with your team. 
+        Add spatial layers, analyze data, and collaborate in real time — 
+        directly in your browser.
+      </p>
       <ul>
-        <li>Data layers, filters, categories</li>
-        <li>Data layers, filters, categories</li>
-        <li>Data layers, filters, categories</li>
-        <li>Data layers, filters, categories</li>
+        <li>Multiple basemaps & data layers</li>
+        <li>Filters, categories & analytics</li>
+        <li>Real-time collaboration & crowdsourcing</li>
+        <li>Places, routes, polygons & events</li>
+        <li>API integration & Google Sheets sync</li>
       </ul>
+      <button onclick="window.location.href= 'https://homify.topmapsolutions.com' ">Launch Demo</button>
     </div>
   </section>
 
@@ -84,13 +96,17 @@
   <footer class="grid">
     <div class="contact">
       <div class="footer-header">
-        <img src="{% static 'imgs/logo.jpg' %}" alt="">
+        <img src="{% static 'imgs/logo-footer.png' %}" alt="">
         <h1>Topmap solutions</h1>
       </div>
       <p>topmapsolutions@gmail.com</p>
       <button>demo</button>
     </div>
     <div class="products">
+      <h1>Products</h1>
+      <a href="/">Real Estate</a>
+    </div>
+    <div class="services">
       <h1>Services</h1>
       <a href="/">Live Maps</a>
       <a href="/">Services</a>
@@ -101,7 +117,8 @@
       <a href="/">About</a>
       <a href="/">Jobs</a>
     </div>
-    <div class="rights">©2025 All rights reserved</div>
   </footer>
+
+  <div class="rights">©2025 All rights reserved</div>
 </body>
 </html>

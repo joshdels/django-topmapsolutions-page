@@ -13,19 +13,34 @@ body {
 
 /* ---------------- HEADER ---------------- */
 header {
+  display: grid; 
   padding: 5px 100px;
   background: #000470;
   margin: 0;
   align-items: center;
+  gap: 15px;
 }
 
-header h1 {
+header .brand {
+   grid-column: 1 / span 6;
+   display: flex;
+   align-items: center;
+   gap: 5px;
+}
+
+header .brand img {
+  max-width: 80px;
+  grid-column: 1;
+  justify-self: end;
+}
+
+header .brand h1 {
   color: white;
-  grid-column: span 6;
   text-transform: uppercase;
   font-size: 30px;
   letter-spacing: 5px;
   font-weight: bolder;
+  justify-self: start
 }
 
 header nav {
@@ -49,17 +64,14 @@ header nav a:hover {
 
 header nav a#contact {
   background-color: #68d388;
-  color: black;
+  color: #000470;
   font-weight: 500;
 }
 
-header nav a#contact:hover {
-  color: black;
-}
 
 /* ---------------- MAIN ---------------- */
 main {
-  padding: 120px 100px;
+  padding: 130px 100px;
   background-color: #151988;
   text-align: center;
 }
@@ -71,7 +83,7 @@ main .content {
 
 main .content h1 {
   font-size: 50px;
-  color: rgb(185, 90, 13);
+  color: #f06c00;
 }
 
 main .content p {
@@ -91,22 +103,25 @@ main .content button {
 
 main .content button:hover {
   transform: translateY(-5px);
-  color: black; /* replaced var(--text-dark) with safe value */
+  color: black; 
 }
 
 main .content button.demo {
-  background: #68d388;
+  background: #f06c00;
+  color: white;
 }
 
 main .content button.contact {
-  background: #68d388;
+  color: white;
+  background: #151988;
+  border: 1.5px solid white;
 }
 
 /* ---------------- SERVICES ---------------- */
 #services {
   padding: 20px 100px;
   background-color: rgb(243, 243, 243);
-  gap: 100px;
+  gap: 50px;
   text-align: center;
 }
 
@@ -119,7 +134,7 @@ main .content button.contact {
 }
 
 #services .card .icon {
-  background-color: rgb(197, 197, 197);
+  background-color: #68d388;
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -135,28 +150,42 @@ main .content button.contact {
 /* ---------------- PROJECTS ---------------- */
 #projects {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(12, 1fr); 
+  gap: 30px;
   padding: 50px 100px;
   background-color: #fff;
   align-items: center;
 }
 
-#projects img {
-  grid-column: 1 / span 6; /* fixed */
-  max-width: 300px;
+#projects .map-preview {
+  grid-column: 1 / span 6; 
   justify-self: center;
-  align-self: center;
 }
 
 #projects .content {
-  grid-column: 7 / span 6; /* fixed */
+  grid-column: 7 / span 6; 
+}
+
+#projects .content button {
+  padding: 10px;
+  background-color: #f06c00;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+#projects .content button:hover {
+  transform: translateY(-2px)
 }
 
 /* ---------------- MISSION ---------------- */
 #mission {
   padding: 30px 100px;
   text-align: center;
-  border-top: 1px solid black; /* fixed */
+  border-top: 1px solid rgba(146, 146, 146, 0.2); 
 }
 
 #mission #top-head {
@@ -175,36 +204,65 @@ main .content button.contact {
   margin-right: 200px;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  align-items: center;
+  place-items: center;
 }
 
 #tech-stack img {
   max-width: 100px;
 }
 
+#tech-stack img:nth-child(1) {
+  max-width: 140px;
+}
+
+#tech-stack img:nth-child(4) {
+  max-width: 60px;
+}
+
+#tech-stack img:nth-child(5) {
+  max-width: 110px;
+}
+
 /* ---------------- FOOTER ---------------- */
 footer {
-  padding: 5px 100px;
+  padding: 30px 200px;
   margin-top: 30px;
   background-color: #000470;
   color: white;
 }
 
 footer.grid {
-  padding: 50px 100px;
-}
-
-footer .contact {
-  grid-column: 1 / span 4;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto auto;
+  gap: 1px;
 }
 
 footer a {
+  display: block;
   text-decoration: none;
-  color: white;
+  color: rgba(255, 255, 255, 0.671);
+}
+
+footer a:hover {
+  color: rgb(255, 255, 255);
+}
+
+footer .contact {
+  grid-column: 0 / span 3;
+}
+
+footer .contact h1 {
+  text-transform: uppercase;
 }
 
 footer .contact img {
   max-width: 100px;
+}
+
+footer p {
+  margin-top: 0;
+  padding: 0;
 }
 
 footer .contact .footer-header {
@@ -215,23 +273,50 @@ footer .contact .footer-header {
   gap: 20px;
 }
 
+footer .products h1, .services h1, .company h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: lighter;
+  font-size: 30px;
+}
+
 footer .contact button {
   padding: 10px 15px;
-  background-color: #68d388;
+  background-color: #000470;
+  border: 2px solid #68d388; /* keep only this */
   font-size: 20px;
-  border: none;
   border-radius: 5px;
   cursor: pointer;
+  color: #68d388; 
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+footer .contact button:hover {
+  background-color: #68d388;
+  color: white;
 }
 
 footer .products {
-  grid-column: 5 / span 4;
+  grid-column: 4 / span 3;
+  display: inline-block;
+}
+
+footer .services {
+  grid-column: 7 / span 3;
+  display: inline-block;
 }
 
 footer .company {
-  grid-column: 9 / span 4;
+  grid-column: 10 / span 3;
 }
 
-footer .rights {
+.rights {
+  padding: 20px;
+  background-color: #000470;
+  color: rgba(255, 255, 255, 0.671);
+  grid-column: 1/ -1;
   grid-row: 2;
+  text-align: center;
+  letter-spacing: 3px;
+  border-top: 0.5px solid rgba(255, 255, 255, 0.2);
+  font-size: 12px;
 }
